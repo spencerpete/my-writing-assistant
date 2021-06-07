@@ -94,7 +94,7 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 ## SWOT Analysis
 
 ### Strengths:
-I have a pretty strong understanding of React and implementing CRUD
+I have a pretty strong understanding of React and implementing CRUD so the initial functionality will be easy.
 
 ### Weaknesses:
 Im worried my site is too basic, I want to add more features to the site to make it more dynamic than a simple text input. 
@@ -102,4 +102,4 @@ Im worried my site is too basic, I want to add more features to the site to make
 ### Opportunities:
 With the functionality of my site being easily completed in a day or two I will have more time to add the dynamic features and implement a component library
 ### Threats:
-Using the draggable react libray may prove difficult and therefore leave out a feautre that I think will make my site stand out. The
+Using the draggable react libray may prove difficult and therefore leave out a feautre that I think will make my site stand out. 
