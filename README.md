@@ -18,7 +18,7 @@ My writting assistant is an orginizational tool for writers, within the site the
 
 ## API and Data Sample
 
-
+### Writing Table
 
 ```json
 {
@@ -39,6 +39,23 @@ My writting assistant is an orginizational tool for writers, within the site the
     "offset": "recymbmXBeIEfynJB"
 }
 
+```
+### Character Table
+```json 
+{
+    "records": [
+        {
+            "id": "recsbDYwZTagC3bWn",
+            "fields": {
+                "name": "James",
+                "age": "17",
+                "backstory": "Just a kid being a kid"
+            },
+            "createdTime": "2021-06-04T14:12:55.000Z"
+        }
+    ],
+    "offset": "recsbDYwZTagC3bWn"
+}
 ```
 
 ### MVP/PostMVP
