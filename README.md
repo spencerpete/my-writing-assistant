@@ -23,15 +23,22 @@ My writting assistant is an orginizational tool for writers, within the site the
 ```json
 {
     "records": [
-          {
+        {
             "id": "recymbmXBeIEfynJB",
             "fields": {
-                "Name": "Scene 1",
-                "Location": "INT. James' bedroom",
-                "Description": "James wakes up to the sound of the garbage truck, realizes he is late and busts out of the room",
-                "Characters": "James"
+                "location": "INT. James' bedroom",
+                "name": "Scene 1",
+                "description": "James wakes up to the sound of the garbage truck, realizes he is late and busts out of the room",
+                "characters": "James",
+                "act": "act one",
+                "formating": "screenplay"
             },
             "createdTime": "2021-06-04T14:12:25.000Z"
+        }
+    ],
+    "offset": "recymbmXBeIEfynJB"
+}
+
 ```
 
 ### MVP/PostMVP
