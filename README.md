@@ -2,11 +2,11 @@
 
 ## Project Name
 
-My Writting Assistant
+My Writing Assistant
 
 ## Project Description
 
-My writting assistant is an orginizational tool for writers, within the site they can create a list of characters, A brief summary, and breakdown of scenes.
+My writing assistant is an orginizational tool for writers, within the site they can create a list of characters, A brief summary, and breakdown of scenes.
 
 ## Wireframes
 
