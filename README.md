@@ -36,10 +36,7 @@ My writting assistant is an orginizational tool for writers, within the site the
 
 ### MVP/PostMVP
 
-The functionality will then be divided into two separate lists: MVP and PostMVP.  Carefully decide what is placed into your MVP, as the client will expect this functionality to be implemented upon project completion.  
-
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
 - Set Airtable to complete Full CRUD site
 - Allow User to choose between Screenplay, Stageplay, and Teleplay with apropritate act breakdowns for each. 
@@ -48,10 +45,10 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 - Use Tailwind css for site design
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
 - Add Dragable Scene compnets to SceneBoard 
 - Link characters to scenes they are in. 
+- Add Features that halp guide the users act structure. 
 
 ## Project Schedule
 
