@@ -10,10 +10,10 @@ My writting assistant is an orginizational tool for writers, within the site the
 
 ## Wireframes
 
-![image](https://user-images.githubusercontent.com/69879139/121009948-c291f580-c762-11eb-8da5-bf23d15313ab.png)
+![Wireframe](https://user-images.githubusercontent.com/69879139/121009948-c291f580-c762-11eb-8da5-bf23d15313ab.png)
 
 ## Component Hierarchy
-![image](https://user-images.githubusercontent.com/69879139/121011091-384a9100-c764-11eb-8f5a-33f5bfbe15d0.png)
+![Component Hierarchy](https://user-images.githubusercontent.com/69879139/121025918-a9de0b80-c773-11eb-8071-41867b365a3f.png)
 
 
 ## API and Data Sample
