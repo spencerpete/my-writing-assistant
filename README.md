@@ -62,17 +62,18 @@ My writting assistant is an orginizational tool for writers, within the site the
 
 #### MVP 
 
-- Set Airtable to complete Full CRUD site
 - Allow User to choose between Screenplay, Stageplay, and Teleplay with apropriate act breakdowns for each. 
+- Allow user to create scenes for specific acts and formats
 - Render Scenes on Scene Board
-- Render Character List, with Input/edit form 
+- Create and render Character List
 - Use Tailwind css for site design
 
 #### PostMVP  
 
+- Add Edit form for Characters 
 - Add Dragable Scene compnets to SceneBoard 
 - Link characters to scenes they are in. 
-- Add Features that halp guide the users act structure. 
+- Add Features that help guide the users act structure. 
 
 ## Project Schedule
 
