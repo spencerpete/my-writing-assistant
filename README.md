@@ -99,4 +99,4 @@ Im worried my site is too basic, I want to add more features to the site to make
 ### Opportunities:
 With the functionality of my site being easily completed in a day or two I will have more time to add the dynamic features and implement a component library
 ### Threats:
-Using the draggable react libray may prove difficult and therefore leave out a feautre that I think will make my site stand out. 
+Using the draggable react libray may prove difficult and therefore leave out a feautre that I think will make my site stand out. My site lends it self more to desktop/ Ipad. While I will still make responsive mobile design, the site will be desktop focused. 
