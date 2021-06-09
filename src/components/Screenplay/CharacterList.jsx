@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import {createCharacter} from '../../services/apiCall'
+import {createCharacter, getCharacters} from '../../services/apiCall'
 const characterObj = {
   name: '',
   age: '',
@@ -10,6 +10,7 @@ const characterObj = {
 }
 export default function CharacterList() {
   const [input, setInput] = useState(characterObj)
+  const [characters, setCharacters] = useState([])
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -22,6 +23,14 @@ export default function CharacterList() {
     e.preventDefault();
     const res = await createCharacter(input)
   }
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getCharacters()
+      setCharacters(res.records);
+    };
+    fetchData()
+  }, [])
+  const filtered = characters.filter(character => character.fields.scriptType === 'screenplay')
   return (
     <div>
       <header>
@@ -31,7 +40,16 @@ export default function CharacterList() {
           <Link to='/screenplay/new-scene'>Add Scenes</Link>
         </nav>
       </header>
-      <ul>Character List</ul> 
+      <div>
+        <h2>Character List</h2>
+        {filtered.map(character => {
+          return <div>
+            {character.fields.name}
+            {character.fields.age}
+            {character.fields.backstory}
+          </div>
+        })}
+      </div>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <h3>Character Details</h3>
         <label>Name: </label>

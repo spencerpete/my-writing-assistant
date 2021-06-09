@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from "react-router-dom";
-import {createScene} from "../../services/apiCall"
+import {createScene, getScenes} from "../../services/apiCall"
 const actOneObj = {
   name: '',
   location: '',
@@ -29,6 +29,7 @@ export default function NewScene() {
   const [actOne, setActOne] = useState(actOneObj)
   const [actTwo, setActTwo] = useState(actTwoObj)
   const [actThree, setActThree] = useState(actThreeObj)
+  const [scenes, setScenes] = useState([])
   
   const handleChangeOne = (e) => {
     const { name, value } = e.target
@@ -54,19 +55,35 @@ export default function NewScene() {
       [name]: value
     }))
   }
-  const handleSubmitOne = async(e) => {
+  const handleSubmitOne = async (e) => {
     e.preventDefault()
     await createScene(actOne)
-    console.log(actOneObj)
   }
-  const handleSubmitTwo = async(e) => {
+  const handleSubmitTwo = async (e) => {
     e.preventDefault()
     await createScene(actTwo)
   }
-  const handleSubmitThree = async(e) => {
+  const handleSubmitThree = async (e) => {
     e.preventDefault()
     await createScene(actThree)
   }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getScenes()
+      setScenes(res.records);
+    };
+    fetchData()
+  }, [])
+  const filtered = scenes.filter(scene => scene.fields.scriptType === 'screenplay')
+  const actOneArr = filtered.filter(scene => scene.fields.act === 'act one')
+  const actTwoArr = filtered.filter(scene => scene.fields.act === 'act two')
+  const actThreeArr = filtered.filter(scene => scene.fields.act === 'act three')
+  console.log(scenes)
+  console.log('filtered', filtered)
+  console.log('act one', actOneArr)
+  // const filtered = scenes.filter(scene => scene.fields.scriptType === 'screenplay'
+  // )
   return (
     <div>
       <header>
@@ -92,6 +109,11 @@ export default function NewScene() {
         <br/>
         <button>Add Scene</button>
       </form>
+      <ul>
+        {actOneArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+      </ul>
       <h2>Act Two</h2>
       <form onChange={handleChangeTwo} onSubmit={handleSubmitTwo}>
         <label>Scene Name:</label>
@@ -108,6 +130,11 @@ export default function NewScene() {
         <br/>
         <button>Add Scene</button>
       </form>
+      <ul>
+      {actTwoArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+      </ul>
       <h2>Act Three</h2>
       <form onChange={handleChangeThree} onSubmit={handleSubmitThree}>
         <label>Scene Name:</label>
@@ -124,6 +151,11 @@ export default function NewScene() {
         <br/>
         <button>Add Scene</button>
       </form>
+      <ul>
+      {actThreeArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+      </ul>
     </div>
   )
 }

@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from "react-router-dom"
-import {createScene} from '../../services/apiCall'
+import {createScene, getScenes} from '../../services/apiCall'
 const actOneObj = {
   name: '',
   location: '',
@@ -20,6 +20,7 @@ const actTwoObj = {
 export default function STGNewScene() {
   const [actOne, setActOne] = useState(actOneObj)
   const [actTwo, setActTwo] = useState(actTwoObj)
+  const [scenes, setScenes] = useState([])
   const handleChangeOne = (e) => {
     const { name, value } = e.target
 
@@ -36,13 +37,23 @@ export default function STGNewScene() {
     }))
   }
   const handleSubmitOne = async (e) => {
-    e.preventDefault
+    e.preventDefault()
     const res = await createScene(actOne) 
   }
   const handleSubmitTwo = async (e) => {
-    e.preventDefault
+    e.preventDefault()
     const res = await createScene(actTwo) 
   }
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getScenes()
+      setScenes(res.records.filter(scene => scene.fields.scriptType === 'stage play'));
+    };
+    fetchData()
+  }, [])
+  console.log(scenes)
+  const actOneArr = scenes.filter(scene => scene.fields.act === 'act one')
+  const actTwoArr = scenes.filter(scene => scene.fields.act === 'act two')
   return (
     <div>
       <header>
@@ -68,6 +79,11 @@ export default function STGNewScene() {
         <br/>
         <button>Add Scene</button>
       </form>
+      <ul>
+        {actOneArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+      </ul>
       <h2>Act Two</h2>
       <form onChange={handleChangeTwo} onSubmit={handleSubmitTwo}>
         <label>Scene Name:</label>
@@ -84,6 +100,11 @@ export default function STGNewScene() {
         <br/>
         <button>Add Scene</button>
       </form>
+      <ul>
+        {actTwoArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+      </ul>
     </div>
   )
 }
