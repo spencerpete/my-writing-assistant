@@ -42,13 +42,14 @@ export default function STGNewScene() {
   }
   const handleSubmitTwo = async (e) => {
     e.preventDefault()
-    const res = await createScene(actTwo) 
+    const res = await createScene(actTwo)
+    fetchData()
   }
+  const fetchData = async () => {
+    const res = await getScenes()
+    setScenes(res.records.filter(scene => scene.fields.scriptType === 'stage play'));
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await getScenes()
-      setScenes(res.records.filter(scene => scene.fields.scriptType === 'stage play'));
-    };
     fetchData()
   }, [])
   console.log(scenes)

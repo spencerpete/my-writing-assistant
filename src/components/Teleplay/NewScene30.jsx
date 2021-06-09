@@ -57,23 +57,24 @@ export default function NewScene30() {
   const handleSubmitOne = async(e) => {
     e.preventDefault()
     await createScene(actOne)
-    console.log(actOneObj)
+    fetchData()
   }
   const handleSubmitTwo = async(e) => {
     e.preventDefault()
     await createScene(actTwo)
+    fetchData()
   }
   const handleSubmitCold = async(e) => {
     e.preventDefault()
     await createScene(coldOpen)
+    fetchData()
   }
-
+  const fetchData = async () => {
+    const res = await getScenes()
+    setScenes(res.records.filter(scene => scene.fields.scriptType === 'teleplay 30'));
+  };
   const [scenes, setScenes] = useState([])
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await getScenes()
-      setScenes(res.records.filter(scene => scene.fields.scriptType === 'teleplay 30'));
-    };
     fetchData()
   }, [])
   console.log(scenes)

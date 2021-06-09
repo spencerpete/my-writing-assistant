@@ -22,12 +22,13 @@ export default function Character1hr() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await createCharacter(input)
+    fetchData()
   }
+  const fetchData = async () => {
+    const res = await getCharacters()
+    setCharacters(res.records.filter(character => character.fields.scriptType === 'teleplay hr'));
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await getCharacters()
-      setCharacters(res.records.filter(character => character.fields.scriptType === 'teleplay hr'));
-    };
     fetchData()
   }, [])
   return (
@@ -52,13 +53,13 @@ export default function Character1hr() {
     <form onChange={handleChange} onSubmit={handleSubmit}>
       <h3>Character Details</h3>
       <label>Name: </label>
-      <input />
+      <input  name='name'/>
       <br/>
       <label>Age: </label>
-      <input />
+      <input name='age'/>
       <br/>
       <label>Backstory: </label>
-      <input />
+      <input name='backstory'/>
       <br />
       <label>Character Class:</label>
       <select>

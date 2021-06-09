@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from "react-router-dom"
-import {createScene} from '../../services/apiCall'
+import {createScene, getScenes} from '../../services/apiCall'
 
 const coldObj = {
   name: '',
@@ -113,38 +113,42 @@ export default function HrNewScene() {
   const handleSubmitCold = async(e) => {
     e.preventDefault()
     await createScene(coldOpen)
+    fetchData()
   }
   const handleSubmitOne = async(e) => {
     e.preventDefault()
     await createScene(actOne)
-    console.log(actOneObj)
+    fetchData()
   }
   const handleSubmitTwo = async(e) => {
     e.preventDefault()
     await createScene(actTwo)
+    fetchData()
   }
   const handleSubmitThree = async(e) => {
     e.preventDefault()
     await createScene(actThree)
+    fetchData()
   }
   const handleSubmitFour = async(e) => {
     e.preventDefault()
     await createScene(actFour)
+    fetchData()
   }
   const handleSubmitFive = async(e) => {
     e.preventDefault()
     await createScene(actFive)
+    fetchData()
   }
 
   const [scenes, setScenes] = useState([])
+  const fetchData = async () => {
+    const res = await getScenes()
+    setScenes(res.records.filter(scene => scene.fields.scriptType === 'teleplay hr'));
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await getScenes()
-      setScenes(res.records.filter(scene => scene.fields.scriptType === 'teleplay 30'));
-    };
     fetchData()
   }, [])
-  console.log(scenes)
   const coldArr = scenes.filter(scene => scene.fields.act === 'cold open')
   const actOneArr = scenes.filter(scene => scene.fields.act === 'act one')
   const actTwoArr = scenes.filter(scene => scene.fields.act === 'act two')
@@ -182,7 +186,7 @@ export default function HrNewScene() {
         })}
     </ul>    
     <h2>Act One</h2>
-    <form onChange={handleChangeTwo} onSubmit={handleSubmitOne}>
+    <form onChange={handleChangeOne} onSubmit={handleSubmitOne}>
       <label>Scene Name:</label>
       <input name='name'/>
       <br />
@@ -203,7 +207,7 @@ export default function HrNewScene() {
         })}
     </ul>  
     <h2>Act Two</h2>
-      <form onChange={handleChangeTwo} onSubmit={handleSubmitThree}>
+      <form onChange={handleChangeTwo} onSubmit={handleSubmitTwo}>
       <label>Scene Name:</label>
       <input name='name'/>
       <br />

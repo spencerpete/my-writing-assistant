@@ -22,15 +22,15 @@ export default function STGCharacter() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await createCharacter(input)
+    fetchData()
   }
+  const fetchData = async () => {
+    const res = await getCharacters()
+    setCharacters(res.records.filter(character => character.fields.scriptType === 'stage play'));
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await getCharacters()
-      setCharacters(res.records.filter(character => character.fields.scriptType === 'screenplay'));
-    };
     fetchData()
   }, [])
-  // const filtered = characters.filter(character => character.fields.scriptType === 'screenplay')
   return (
     <div>
       <header>

@@ -22,15 +22,17 @@ export default function CharacterList() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await createCharacter(input)
+    fetchData()
+    setInput(characterObj)
   }
+  const fetchData = async () => {
+    const res = await getCharacters()
+    setCharacters(res.records.filter(character => character.fields.scriptType === 'screenplay'));
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await getCharacters()
-      setCharacters(res.records);
-    };
     fetchData()
   }, [])
-  const filtered = characters.filter(character => character.fields.scriptType === 'screenplay')
+  
   return (
     <div>
       <header>
@@ -42,7 +44,7 @@ export default function CharacterList() {
       </header>
       <div>
         <h2>Character List</h2>
-        {filtered.map(character => {
+        {characters.map(character => {
           return <div>
             {character.fields.name}
             {character.fields.age}
@@ -53,13 +55,13 @@ export default function CharacterList() {
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <h3>Character Details</h3>
         <label>Name: </label>
-        <input />
+        <input name='name' />
         <br/>
         <label>Age: </label>
-        <input />
+        <input name='age'/>
         <br/>
         <label>Backstory: </label>
-        <input type='text-area' />
+        <input name='backstory' />
         <br/>
         <button>Add/Edit</button>
       </form>

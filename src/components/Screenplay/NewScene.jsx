@@ -58,32 +58,29 @@ export default function NewScene() {
   const handleSubmitOne = async (e) => {
     e.preventDefault()
     await createScene(actOne)
+    fetchData()
   }
   const handleSubmitTwo = async (e) => {
     e.preventDefault()
     await createScene(actTwo)
+    fetchData()
   }
   const handleSubmitThree = async (e) => {
     e.preventDefault()
     await createScene(actThree)
+    fetchData()
   }
-
+  const fetchData = async () => {
+    const res = await getScenes()
+    setScenes(res.records);
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await getScenes()
-      setScenes(res.records);
-    };
     fetchData()
   }, [])
   const filtered = scenes.filter(scene => scene.fields.scriptType === 'screenplay')
   const actOneArr = filtered.filter(scene => scene.fields.act === 'act one')
   const actTwoArr = filtered.filter(scene => scene.fields.act === 'act two')
   const actThreeArr = filtered.filter(scene => scene.fields.act === 'act three')
-  console.log(scenes)
-  console.log('filtered', filtered)
-  console.log('act one', actOneArr)
-  // const filtered = scenes.filter(scene => scene.fields.scriptType === 'screenplay'
-  // )
   return (
     <div>
       <header>

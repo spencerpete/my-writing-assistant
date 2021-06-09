@@ -21,13 +21,14 @@ export default function Character30() {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await createCharacter(input)
+    const res = await createCharacter(input);
+    fetchData()
   }
+  const fetchData = async () => {
+    const res = await getCharacters()
+    setCharacters(res.records.filter(character => character.fields.scriptType === 'teleplay 30'));
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await getCharacters()
-      setCharacters(res.records.filter(character => character.fields.scriptType === 'teleplay 30'));
-    };
     fetchData()
   }, [])
   return (
@@ -52,15 +53,15 @@ export default function Character30() {
     <form onChange={handleChange} onSubmit={handleSubmit}>
       <h3>Character Details</h3>
       <label>Name: </label>
-      <input />
+      <input name='name'/>
       <br/>
       <label>Age: </label>
-      <input />
+      <input name='age'/>
       <br/>
       <label>Backstory: </label>
-      <input />
+      <input name='backstory'/>
       <br />
-      <select>
+      <select name='characterClass'>
         <option value="Main Cast">Main cast</option>
         <option value='Recurring'>Recurring</option>
         <option value="Guest Star">Guest Star</option>
