@@ -135,6 +135,22 @@ export default function HrNewScene() {
     e.preventDefault()
     await createScene(actFive)
   }
+
+  const [scenes, setScenes] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getScenes()
+      setScenes(res.records.filter(scene => scene.fields.scriptType === 'teleplay 30'));
+    };
+    fetchData()
+  }, [])
+  console.log(scenes)
+  const coldArr = scenes.filter(scene => scene.fields.act === 'cold open')
+  const actOneArr = scenes.filter(scene => scene.fields.act === 'act one')
+  const actTwoArr = scenes.filter(scene => scene.fields.act === 'act two')
+  const actThreeArr = scenes.filter(scene => scene.fields.act === 'act three')
+  const actFourArr = scenes.filter(scene => scene.fields.act === 'act four')
+  const actFiveArr = scenes.filter(scene => scene.fields.act === 'act five')
   return (
     <div>
     <header>
@@ -160,8 +176,13 @@ export default function HrNewScene() {
       <br/>
       <button>Add Scene</button>
     </form>
+    <ul>
+        {coldArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+    </ul>    
     <h2>Act One</h2>
-    <form onChange={handleChangeOne} onSubmit={handleSubmitOne}>
+    <form onChange={handleChangeTwo} onSubmit={handleSubmitOne}>
       <label>Scene Name:</label>
       <input name='name'/>
       <br />
@@ -176,6 +197,11 @@ export default function HrNewScene() {
       <br/>
       <button>Add Scene</button>
     </form>
+    <ul>
+        {actOneArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+    </ul>  
     <h2>Act Two</h2>
       <form onChange={handleChangeTwo} onSubmit={handleSubmitThree}>
       <label>Scene Name:</label>
@@ -192,6 +218,11 @@ export default function HrNewScene() {
       <br/>
       <button>Add Scene</button>
     </form>
+    <ul>
+        {actTwoArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+    </ul>  
     <h2>Act Three</h2>
     <form onChange={handleChangeThree} onSubmit={handleSubmitThree}>
       <label>Scene Name:</label>
@@ -208,6 +239,11 @@ export default function HrNewScene() {
       <br/>
       <button>Add Scene</button>
     </form>
+    <ul>
+        {actThreeArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+    </ul>    
     <h2>Act Four</h2>
     <form onChange={handleChangeFour} onSubmit={handleSubmitFour}>
       <label>Scene Name:</label>
@@ -224,6 +260,11 @@ export default function HrNewScene() {
       <br/>
       <button>Add Scene</button>
     </form>
+    <ul>
+        {actFourArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+    </ul>    
     <h2>Act Five</h2>
     <form onChange={handleChangeFive} onSubmit={handleSubmitFive}>
       <label>Scene Name:</label>
@@ -239,7 +280,12 @@ export default function HrNewScene() {
       <input name='description'/>
       <br/>
       <button>Add Scene</button>
-    </form>  
+    </form>
+    <ul>
+        {actFiveArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+    </ul>    
   </div>
   )
 }

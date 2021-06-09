@@ -35,7 +35,27 @@ export default function Screenplay() {
         })}
       </div>
       <h1>Act Two</h1>
+      <div>
+        {actTwoArr.map(scene => {
+          return <div>
+            {scene.fields?.name}
+            {scene.fields?.location}
+            {scene.fields?.characters}
+            {scene.fields?.description}
+          </div>
+        })}
+      </div>
       <h1>Act Three</h1>
+      <div>
+        {actThreeArr.map(scene => {
+          return <div>
+            {scene.fields?.name}
+            {scene.fields?.location}
+            {scene.fields?.characters}
+            {scene.fields?.description}
+          </div>
+        })}
+      </div>
     </>
   )
 }

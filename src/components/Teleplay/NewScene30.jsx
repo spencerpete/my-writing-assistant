@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from "react-router-dom"
-import {createScene} from '../../services/apiCall'
+import {createScene, getScenes} from '../../services/apiCall'
 
 const coldObj = {
   name: '',
@@ -67,6 +67,19 @@ export default function NewScene30() {
     e.preventDefault()
     await createScene(coldOpen)
   }
+
+  const [scenes, setScenes] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getScenes()
+      setScenes(res.records.filter(scene => scene.fields.scriptType === 'teleplay 30'));
+    };
+    fetchData()
+  }, [])
+  console.log(scenes)
+  const coldArr = scenes.filter(scene => scene.fields.act === 'cold open')
+  const actOneArr = scenes.filter(scene => scene.fields.act === 'act one')
+  const actTwoArr = scenes.filter(scene => scene.fields.act === 'act two')
   return (
     <div>
     <header>
@@ -92,6 +105,11 @@ export default function NewScene30() {
       <br/>
       <button>Add Scene</button>
     </form>
+    <ul>
+        {coldArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+    </ul>  
     <h2>Act One</h2>
     <form onChange={handleChangeOne} onSubmit={handleSubmitOne}>
       <label>Scene Name:</label>
@@ -108,6 +126,11 @@ export default function NewScene30() {
       <br/>
       <button>Add Scene</button>
     </form>
+    <ul>
+        {actOneArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+    </ul>  
     <h2>Act Two</h2>
     <form onChange={handleChangeTwo} onSubmit={handleSubmitTwo}>
       <label>Scene Name:</label>
@@ -124,6 +147,11 @@ export default function NewScene30() {
       <br/>
       <button>Add Scene</button>
     </form>
+    <ul>
+        {actTwoArr.map(scene => {
+          return <li>{scene.fields.name}{scene.fields.location}</li>
+        })}
+      </ul>  
   </div>
 
   )
