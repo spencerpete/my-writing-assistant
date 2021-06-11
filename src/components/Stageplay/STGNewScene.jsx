@@ -38,11 +38,12 @@ export default function STGNewScene() {
   }
   const handleSubmitOne = async (e) => {
     e.preventDefault()
-    const res = await createScene(actOne) 
+    await createScene(actOne)
+    fetchData()
   }
   const handleSubmitTwo = async (e) => {
     e.preventDefault()
-    const res = await createScene(actTwo)
+    await createScene(actTwo)
     fetchData()
   }
   const fetchData = async () => {

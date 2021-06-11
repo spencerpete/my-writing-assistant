@@ -27,7 +27,7 @@ export default function HalfHrTeleplay() {
     <h2>Cold Open</h2>
     <div>
       {coldArr.map(scene => {
-        return <div>
+        return <div key={scene.id}>
           {scene.fields?.name}
           {scene.fields?.location}
           {scene.fields?.characters}
@@ -38,7 +38,7 @@ export default function HalfHrTeleplay() {
     <h2>Act One</h2>
     <div>
         {actOneArr.map(scene => {
-          return <div>
+          return <div key={scene.id}>
             {scene.fields?.name}
             {scene.fields?.location}
             {scene.fields?.characters}
@@ -49,7 +49,7 @@ export default function HalfHrTeleplay() {
     <h2>Act Two</h2>
     <div>
         {actTwoArr.map(scene => {
-          return <div>
+          return <div key={scene.id}>
             {scene.fields?.name}
             {scene.fields?.location}
             {scene.fields?.characters}

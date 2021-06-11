@@ -21,7 +21,7 @@ export default function STGCharacter() {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await createCharacter(input)
+    await createCharacter(input)
     fetchData()
   }
   const fetchData = async () => {
@@ -33,19 +33,21 @@ export default function STGCharacter() {
   }, [])
   return (
     <div>
-      <header>
-        <h1>Stage Play</h1>
-        <nav>
-          <Link to='/'>Try Another Project</Link>
-          <Link to='/stageplay'>Story Board</Link>
+      <nav>
+          <div className='flex items-center flex-shrink-0 mr-6'>
+            <span className="font-semibold text-xl tracking-tight">Stage Play</span>
+          </div>
+          <div>
+          <Link to='/'>Try a different project</Link>
+          <Link to='/stageplay'>Scene Board</Link>
           <Link to='/stageplay/new-scene'>Add Scenes</Link>
+          </div>
         </nav>
-      </header>
       <div className='grid grid-row-2 grid-flow-col'>
       <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md'>
         <h2>Character List</h2>
         {characters.map(character => {
-          return <div>
+          return <div key={character.id}>
             {character.fields?.name}
             {character.fields?.age}
             {character.fields?.backstory}

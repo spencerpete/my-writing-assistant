@@ -21,7 +21,7 @@ export default function Character30() {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await createCharacter(input);
+    await createCharacter(input);
     fetchData()
   }
   const fetchData = async () => {
@@ -45,7 +45,7 @@ export default function Character30() {
       <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md'>
         <h2>Character List</h2>
         {characters.map(character => {
-          return <div>
+          return <div key={character.id}>
             {character.fields?.name}
             {character.fields?.age}
             {character.fields?.backstory}

@@ -193,7 +193,7 @@ export default function HrNewScene() {
       </div>
       <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {coldArr.map(scene => {
-          return <li className='mt-1 mb-1'>{scene.fields.name}: {scene.fields.location}</li>
+          return <li key={scene.id} className='mt-1 mb-1'>{scene.fields.name}: {scene.fields.location}</li>
         })}
       </ul>
     </div>
@@ -224,7 +224,7 @@ export default function HrNewScene() {
       </div>
       <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {actOneArr.map(scene => {
-          return <li>{scene.fields.name} {scene.fields.location}</li>
+          return <li key={scene.id}>{scene.fields.name} {scene.fields.location}</li>
         })}
       </ul>
       </div>
@@ -255,7 +255,7 @@ export default function HrNewScene() {
       </div>
       <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {actTwoArr.map(scene => {
-          return <li>{scene.fields.name}{scene.fields.location}</li>
+          return <li key={scene.id}>{scene.fields.name}{scene.fields.location}</li>
         })}
       </ul>
         </div>
@@ -288,7 +288,7 @@ export default function HrNewScene() {
       </div>
       <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {actThreeArr.map(scene => {
-          return <li className='mt-1 mb-1'>{scene.fields.name}: {scene.fields.location}</li>
+          return <li key={scene.id} className='mt-1 mb-1'>{scene.fields.name}: {scene.fields.location}</li>
         })}
       </ul>
     </div>
@@ -319,7 +319,7 @@ export default function HrNewScene() {
       </div>
       <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {actFourArr.map(scene => {
-          return <li>{scene.fields.name} {scene.fields.location}</li>
+          return <li key={scene.id}>{scene.fields.name} {scene.fields.location}</li>
         })}
       </ul>
       </div>
@@ -350,7 +350,7 @@ export default function HrNewScene() {
       </div>
       <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {actFiveArr.map(scene => {
-          return <li>{scene.fields.name}{scene.fields.location}</li>
+          return <li key={scene.id}>{scene.fields.name}{scene.fields.location}</li>
         })}
       </ul>
         </div>

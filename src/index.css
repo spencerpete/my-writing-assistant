@@ -7,9 +7,9 @@
   textarea {
     @apply w-full rounded border-2;
   }
-  /* form {
+  form {
     @apply mb-0 space-y-6;
-  } */
+  }
   textarea {
     @apply h-24;
   }
@@ -17,16 +17,16 @@
     @apply border-2 h-full;
   }
   a {
-    /* @apply border-2 rounded p-3 m-10; */
+    @apply block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8;
   }
 
   nav {
-    @apply mt-8 mb-4;
+    @apply flex items-center justify-between flex-wrap bg-teal-500 p-6 mt-0;
   }
   h1 {
     @apply text-6xl;
   }
   button {
-    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+    @apply bg-teal-200 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded;
   }
 }

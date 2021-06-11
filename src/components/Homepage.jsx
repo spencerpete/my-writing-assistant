@@ -24,7 +24,7 @@ export default function Homepage() {
       <Link to='/stageplay'>
         I am writing a Stage Play
       </Link>
-      <a className="border-2 rounded p-3 m-10" onClick={() => { setClicked(prev => !prev) }}>I am writing a teleplay</a>
+      <button className="border-2 rounded p-3 m-10" onClick={() => { setClicked(prev => !prev) }}>I am writing a teleplay</button>
           {clicked ? handleTeleplay() : null}
         </nav> 
       </header>
