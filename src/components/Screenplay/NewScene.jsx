@@ -85,14 +85,18 @@ export default function NewScene() {
   console.log(actThreeArr)
   return (
     <div>
-      <header className="h-full">
-        <h1 className='text-6xl'>Screenplay</h1>
-        <nav className='mt-8 mb-4'>
-          <Link to='/'>Try Another Project</Link>
-          <Link to='/screenplay'>Story Board</Link>
-          <Link to='/screenplay/character'>Character List</Link>
+      <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6 mt-0">
+        <div className='flex items-center flex-shrink-0 mr-6'>
+          <span className="font-semibold text-xl tracking-tight">Screenplay</span>
+          </div>
+        <div>
+          <div>
+            <Link className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8" to='/'>Try Another Project</Link>
+            <Link className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8" to='/screenplay'>Story Board</Link>
+            <Link className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8" to='/screenplay/character'>Character List</Link>
+          </div>
+        </div>
         </nav>
-      </header>
   <div className='grid grid-row-3 grid-flow-col'>
         <div className='m-8 sm:w-auto sm:max-w-md min-w-1/3'>
       <h2>Act One</h2>
