@@ -58,11 +58,11 @@ export default function STGCharacter() {
         <form onChange={handleChange} onSubmit={handleSubmit}>
           <h3>Character Details</h3>
           <label>Name: </label>
-          <input name='name'/> 
+          <input name='name' required/> 
         <label>Age: </label>
-        <input name='age'/>
+        <input name='age' required/>
         <label>Backstory: </label>
-        <textarea name='backstory'/>
+        <textarea name='backstory' required/>
         <button>Add/Edit</button>
         </form>
         </div>

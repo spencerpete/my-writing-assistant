@@ -58,14 +58,16 @@ export default function STGNewScene() {
   const actTwoArr = scenes.filter(scene => scene.fields.act === 'act two')
   return (
     <div>
-      <header>
-        <h1>Stage Play</h1>
-        <nav>
-          <Link to='/'>Try Another Project</Link>
-          <Link to='/stageplay'>Story Board</Link>
+      <nav>
+          <div className='flex items-center flex-shrink-0 mr-6'>
+            <span className="font-semibold text-xl tracking-tight">Stage Play</span>
+          </div>
+          <div>
+          <Link to='/'>Try a different project</Link>
           <Link to='/stageplay/character'>Character List</Link>
+          <Link to='/stageplay'>Scene Board</Link>
+          </div>
         </nav>
-      </header>
       <div className='grid grid-row-2 grid-flow-col'>
         <div className='m-8 sm:w-auto sm:max-w-md min-w-1/3'>
       <h2>Act One</h2>

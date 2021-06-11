@@ -11,7 +11,10 @@ export default function Screenplay() {
     fetchData()
   }, [])
   console.log(scenes)
-  const actOneArr = scenes.filter(scene => scene.fields.act === 'act one')
+  const actOneArr = scenes.filter(scene => scene.fields.act === 'act one').sort((a, b) => a.fields.name - b.fields.name)
+  // const sorted= actOneArr.sort((a, b) => a.fields.name - b.fields.name)
+  // console.log(actOneArr)
+  // console.log(sorted)
   const actTwoArr = scenes.filter(scene => scene.fields.act === 'act two')
   const actThreeArr = scenes.filter(scene => scene.fields.act === 'act three')
   return (
@@ -30,7 +33,7 @@ export default function Screenplay() {
       <div className='grid grid-row-4 grid-flow-col'>
         {actOneArr.map(scene => {
           return <div key={scene.id} className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md'>
-            <p>{scene.fields?.name}</p>
+            {/* <p>{scene.fields?.name}</p> */}
             <p className='italic'>{scene.fields?.location}</p>
             <p>{scene.fields?.description}</p>
             <p className='text-xs'>{scene.fields?.characters}</p>

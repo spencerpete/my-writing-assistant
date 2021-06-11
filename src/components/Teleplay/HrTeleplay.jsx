@@ -20,14 +20,16 @@ export default function HrTeleplay() {
   const actFiveArr = scenes.filter(scene => scene.fields.act === 'act five')
   return (
     <>
-      <header>
-        <h1>Teleplay Hour Long</h1>
-        <nav>
-          <Link to='/'>Try a different project</Link>
-          <Link to='/teleplay/hr/character'>Character List</Link>
-          <Link to='/teleplay/hr/new-scene'>Add Scenes</Link>
+      <nav>
+      <div className='flex items-center flex-shrink-0 mr-6'>
+        <span className="font-semibold text-xl tracking-tight">Teleplay 1 Hour</span>
+      </div>
+      <div>
+        <Link to='/'>Try Another Project</Link>  
+        <Link to='/teleplay/hr/character'>Character List</Link>
+        <Link to='/teleplay/hr/new-scene'>Add Scenes</Link>
+      </div>
       </nav>
-      </header>
       <h2>Cold Open</h2>
       <div className='grid grid-row-4 grid-flow-col'>
         {coldArr.map(scene => {

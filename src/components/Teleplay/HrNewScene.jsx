@@ -157,14 +157,16 @@ export default function HrNewScene() {
   const actFiveArr = scenes.filter(scene => scene.fields.act === 'act five')
   return (
     <div>
-    <header>
-      <h1>Teleplay One Hour</h1>
-        <nav>
-          <Link to='/'>Try Another Project</Link>
-        <Link to='/teleplay/hr'>Story Board</Link>
+    <nav>
+      <div className='flex items-center flex-shrink-0 mr-6'>
+        <span className="font-semibold text-xl tracking-tight">Teleplay 1 Hour</span>
+      </div>
+      <div>
+        <Link to='/'>Try Another Project</Link>  
+        <Link to='/teleplay/hr'>Scene Board</Link>
         <Link to='/teleplay/hr/character'>Character List</Link>
+      </div>
       </nav>
-    </header>
     <div className='grid grid-row-3 grid-flow-col'>
         <div className='m-8 sm:w-auto sm:max-w-md min-w-1/3'>
       <h2>Cold Open</h2>

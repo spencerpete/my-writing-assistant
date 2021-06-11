@@ -33,14 +33,16 @@ export default function Character30() {
   }, [])
   return (
     <div>
-    <header>
-      <h1>Teleplay 30 Minute</h1>
-        <nav>
-        <Link to='/'>Try Another Project</Link>
-        <Link to='/teleplay/30'>Story Board</Link>
-        <Link to='/teleplay/30/new-scene'>Add Scenes</Link>
+    <nav>
+      <div className='flex items-center flex-shrink-0 mr-6'>
+        <span className="font-semibold text-xl tracking-tight">Teleplay 30 Minute</span>
+      </div>
+      <div>
+        <Link to='/'>Try Another Project</Link>  
+        <Link to='/teleplay/30'>Scene Board</Link>
+        <Link to='/teleplay/30/new-scene'>Add Scene</Link>
+      </div>
       </nav>
-    </header>
     <div className='grid grid-row-2 grid-flow-col'>
       <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md'>
         <h2>Character List</h2>
@@ -56,11 +58,11 @@ export default function Character30() {
         <form onChange={handleChange} onSubmit={handleSubmit}>
           <h3>Character Details</h3>
           <label>Name: </label>
-          <input name='name'/> 
+          <input name='name' required/> 
         <label>Age: </label>
-        <input name='age'/>
+        <input name='age' required/>
         <label>Backstory: </label>
-        <textarea name='backstory'/>
+        <textarea name='backstory' required/>
         <button>Add/Edit</button>
         </form>
         </div>
