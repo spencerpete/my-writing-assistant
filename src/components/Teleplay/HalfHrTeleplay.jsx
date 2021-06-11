@@ -16,13 +16,15 @@ export default function HalfHrTeleplay() {
   const actTwoArr = scenes.filter(scene => scene.fields.act === 'act two')
   return (
     <>
-    <header>Teleplay 30 Minute</header>
+      <header>
+        <h1>Teleplay 30 Minute</h1>
     <nav>
       <Link to='/'>Try a different project</Link>
       <Link to='/teleplay/30/character'>Character List</Link>
       <Link to='/teleplay/30/new-scene'>Add Scenes</Link>
-    </nav>
-    <h1>Cold Open</h1>
+      </nav>
+      </header>
+    <h2>Cold Open</h2>
     <div>
       {coldArr.map(scene => {
         return <div>
@@ -33,7 +35,7 @@ export default function HalfHrTeleplay() {
         </div>
         })}
       </div>
-    <h1>Act One</h1>
+    <h2>Act One</h2>
     <div>
         {actOneArr.map(scene => {
           return <div>
@@ -44,7 +46,7 @@ export default function HalfHrTeleplay() {
           </div>
         })}
     </div>
-    <h1>Act Two</h1>
+    <h2>Act Two</h2>
     <div>
         {actTwoArr.map(scene => {
           return <div>

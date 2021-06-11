@@ -36,11 +36,13 @@ export default function STGCharacter() {
       <header>
         <h1>Stage Play</h1>
         <nav>
+          <Link to='/'>Try Another Project</Link>
           <Link to='/stageplay'>Story Board</Link>
           <Link to='/stageplay/new-scene'>Add Scenes</Link>
         </nav>
       </header>
-      <div>
+      <div className='grid grid-row-2 grid-flow-col'>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md'>
         <h2>Character List</h2>
         {characters.map(character => {
           return <div>
@@ -50,19 +52,19 @@ export default function STGCharacter() {
           </div>
         })}
       </div>
-      <form onChange={handleChange} onSubmit={handleSubmit}>
-        <h3>Character Details</h3>
-        <label>Name: </label>
-        <input name='name'/>
-        <br/>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md '> 
+        <form onChange={handleChange} onSubmit={handleSubmit}>
+          <h3>Character Details</h3>
+          <label>Name: </label>
+          <input name='name'/> 
         <label>Age: </label>
         <input name='age'/>
-        <br/>
         <label>Backstory: </label>
-        <input name='backstory'/>
-        <br/>
+        <textarea name='backstory'/>
         <button>Add/Edit</button>
-      </form>
+        </form>
+        </div>
+      </div>
     </div>
   )
 }

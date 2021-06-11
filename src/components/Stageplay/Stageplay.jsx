@@ -15,13 +15,15 @@ export default function Stageplay() {
   const actTwoArr = scenes.filter(scene => scene.fields.act === 'act two')
   return (
     <>
-    <header>Stage Play</header>
-    <nav>
-      <Link to='/'>Try a different project</Link>
-      <Link to='/stageplay/character'>Character List</Link>
-      <Link to='/stageplay/new-scene'>Add Scenes</Link>
-    </nav>
-      <h1>Act One</h1>
+      <header>
+        <h1>Stage Play</h1>
+        <nav>
+          <Link to='/'>Try a different project</Link>
+          <Link to='/stageplay/character'>Character List</Link>
+          <Link to='/stageplay/new-scene'>Add Scenes</Link>
+        </nav>
+      </header>
+      <h2>Act One</h2>
       <div>
         {actOneArr.map(scene => {
           return <div>
@@ -32,7 +34,7 @@ export default function Stageplay() {
           </div>
         })}
       </div>
-      <h1>Act Two</h1>
+      <h2>Act Two</h2>
       <div>
         {actTwoArr.map(scene => {
           return <div>

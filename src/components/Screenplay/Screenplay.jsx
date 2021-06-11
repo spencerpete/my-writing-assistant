@@ -17,42 +17,44 @@ export default function Screenplay() {
   const actThreeArr = scenes.filter(scene => scene.fields.act === 'act three')
   return (
     <>
-      <header>Screenplay</header>
-      <nav>
+      <header>
+        <h1>Screenplay</h1>
+        <nav>
         <Link to='/'>Try a different project</Link>
         <Link to='/screenplay/character'>Character List</Link>
         <Link to='/screenplay/new-scene'>Add Scenes</Link>
-      </nav>
-      <h1>Act One</h1>
-      <div>
+        </nav>
+      </header>
+      <h2>Act One</h2>
+      <div className='grid grid-row-4 grid-flow-col'>
         {actOneArr.map(scene => {
-          return <div>
-            {scene.fields?.name}
-            {scene.fields?.location}
-            {scene.fields?.characters}
-            {scene.fields?.description}
+          return <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md'>
+            <p>{scene.fields?.name}</p>
+            <p className='italic'>{scene.fields?.location}</p>
+            <p>{scene.fields?.description}</p>
+            <p className='text-xs'>{scene.fields?.characters}</p>
           </div>
         })}
       </div>
-      <h1>Act Two</h1>
-      <div>
+      <h2>Act Two</h2>
+      <div className='grid grid-row-4 grid-flow-col'>
         {actTwoArr.map(scene => {
-          return <div>
-            {scene.fields?.name}
-            {scene.fields?.location}
-            {scene.fields?.characters}
-            {scene.fields?.description}
+          return <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md'>
+            <p>{scene.fields?.name}</p>
+            <p className='italic'>{scene.fields?.location}</p>
+            <p>{scene.fields?.description}</p>
+            <p className='text-xs'>{scene.fields?.characters}</p>
           </div>
         })}
       </div>
-      <h1>Act Three</h1>
-      <div>
+      <h2>Act Three</h2>
+      <div className='grid grid-row-4 grid-flow-col'>
         {actThreeArr.map(scene => {
-          return <div>
-            {scene.fields?.name}
-            {scene.fields?.location}
-            {scene.fields?.characters}
-            {scene.fields?.description}
+          return <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md'>
+            <p>{scene.fields?.name}</p>
+            <p className='italic'>{scene.fields?.location}</p>
+            <p>{scene.fields?.description}</p>
+            <p className='text-xs'>{scene.fields?.characters}</p>
           </div>
         })}
       </div>

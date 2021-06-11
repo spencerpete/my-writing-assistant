@@ -34,8 +34,9 @@ export default function Character1hr() {
   return (
     <div>
     <header>
-      <h1>Teleplay 30 Minute</h1>
+      <h1>Teleplay One Hour</h1>
       <nav>
+        <Link to='/'>Try Another Project</Link>  
         <Link to='/teleplay/hr'>Story Board</Link>
         <Link to='/teleplay/hr/new-scene'>Add Scenes</Link>
       </nav>
@@ -50,26 +51,30 @@ export default function Character1hr() {
           </div>
         })}
       </div>
-    <form onChange={handleChange} onSubmit={handleSubmit}>
-      <h3>Character Details</h3>
-      <label>Name: </label>
-      <input  name='name'/>
-      <br/>
-      <label>Age: </label>
-      <input name='age'/>
-      <br/>
-      <label>Backstory: </label>
-      <input name='backstory'/>
-      <br />
-      <label>Character Class:</label>
-      <select>
-        <option value="Main Cast">Main cast</option>
-        <option value='Recurring'>Recurring</option>
-        <option value="Guest Star">Guest Star</option>
-      </select>
-      <br/>
-      <button>Add/Edit</button>
-    </form>
+      <div className='grid grid-row-2 grid-flow-col'>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md'>
+        <h2>Character List</h2>
+        {characters.map(character => {
+          return <div>
+            {character.fields?.name}
+            {character.fields?.age}
+            {character.fields?.backstory}
+          </div>
+        })}
+      </div>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md '> 
+        <form onChange={handleChange} onSubmit={handleSubmit}>
+          <h3>Character Details</h3>
+          <label>Name: </label>
+          <input name='name'/> 
+        <label>Age: </label>
+        <input name='age'/>
+        <label>Backstory: </label>
+        <textarea name='backstory'/>
+        <button>Add/Edit</button>
+        </form>
+        </div>
+      </div>
   </div>
   )
 }

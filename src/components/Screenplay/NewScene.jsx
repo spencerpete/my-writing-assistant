@@ -79,80 +79,115 @@ export default function NewScene() {
   }, [])
   const filtered = scenes.filter(scene => scene.fields.scriptType === 'screenplay')
   const actOneArr = filtered.filter(scene => scene.fields.act === 'act one')
-  const actTwoArr = filtered.filter(scene => scene.fields.act === 'act two')
+  const actTwoArr = filtered.filter(scene => scene.fields.act === 'act two' )
   const actThreeArr = filtered.filter(scene => scene.fields.act === 'act three')
+  console.log(filtered)
+  console.log(actThreeArr)
   return (
     <div>
-      <header>
-        <h1>Screenplay</h1>
-        <nav>
+      <header className="h-full">
+        <h1 className='text-6xl'>Screenplay</h1>
+        <nav className='mt-8 mb-4'>
+          <Link to='/'>Try Another Project</Link>
           <Link to='/screenplay'>Story Board</Link>
           <Link to='/screenplay/character'>Character List</Link>
         </nav>
       </header>
+  <div className='grid grid-row-3 grid-flow-col'>
+        <div className='m-8 sm:w-auto sm:max-w-md min-w-1/3'>
       <h2>Act One</h2>
-      <form onChange={handleChangeOne} onSubmit={handleSubmitOne}>
-        <label>Scene Name:</label>
-        <input name='name'/>
-        <br />
-        <label>Location:</label>
-        <input name='location'/>
-        <br/>
-        <label>Character(s):</label>
-        <input name='characters'/>
-        <br/>
-        <label>Description:</label>
-        <input name='description'/>
-        <br/>
-        <button>Add Scene</button>
-      </form>
-      <ul>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+        <form onChange={handleChangeOne} onSubmit={handleSubmitOne} className='mb-0 space-y-6'>
+          <div className='mt-1'>
+            <label className="">Scene Name</label>
+            <input name='name' required/>
+          </div>
+          <div className='mt-1'>
+            <label>Location</label>
+            <input name='location' required/>
+          </div>
+          <div className='mt-1'>
+            <label>Characters</label>
+            <input name='characters' required/>
+          </div>
+          <div className='mt-1'>
+            <label>Description</label>
+            <textarea name='description' required/>
+          </div>
+          <div>
+            <button>Add Scene</button>
+          </div>
+        </form>
+      </div>
+      <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {actOneArr.map(scene => {
-          return <li>{scene.fields.name}{scene.fields.location}</li>
+          return <li className='mt-1 mb-1'>{scene.fields.name}: {scene.fields.location}</li>
         })}
       </ul>
+    </div>
+    <div className='m-8 sm:w-auto sm:max-w-md min-w-1/3'>
       <h2>Act Two</h2>
-      <form onChange={handleChangeTwo} onSubmit={handleSubmitTwo}>
-        <label>Scene Name:</label>
-        <input name='name'/>
-        <br />
-        <label>Location :</label>
-        <input name='location'/>
-        <br/>
-        <label>Character(s):</label>
-        <input name='characters'/>
-        <br/>
-        <label>Description:</label>
-        <input name='description'/>
-        <br/>
-        <button>Add Scene</button>
-      </form>
-      <ul>
-      {actTwoArr.map(scene => {
-          return <li>{scene.fields.name}{scene.fields.location}</li>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+        <form onChange={handleChangeTwo} onSubmit={handleSubmitTwo} className='mb-0 space-y-6'>
+          <div className='mt-1'>
+            <label className=''>Scene Name</label>
+            <input name='name' required/>
+          </div>
+          <div className='mt-1'>
+                <label>Location</label>
+            <input name='location' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Characters</label>
+            <input name='characters' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Description</label>
+            <textarea name='description' required/>
+          </div>
+          <div>
+            <button>Add Scene</button>
+          </div>
+        </form>
+      </div>
+      <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+        {actTwoArr.map(scene => {
+          return <li>{scene.fields.name} {scene.fields.location}</li>
         })}
       </ul>
+      </div>
+      <div className='m-8  sm:w-auto sm:max-w-md'>
       <h2>Act Three</h2>
-      <form onChange={handleChangeThree} onSubmit={handleSubmitThree}>
-        <label>Scene Name:</label>
-        <input name='name'/>
-        <br />
-        <label>Location:</label>
-        <input name='location'/>
-        <br/>
-        <label>Character(s):</label>
-        <input name='characters'/>
-        <br/>
-        <label>Description:</label>
-        <input name='description'/>
-        <br/>
-        <button>Add Scene</button>
-      </form>
-      <ul>
-      {actThreeArr.map(scene => {
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+        <form onChange={handleChangeThree} onSubmit={handleSubmitThree} className='mb-0 space-y-6'>
+          <div className='mt-1'>
+            <label>Scene Name</label>
+            <input name='name' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Location</label>
+            <input name='location' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Characters</label>
+            <input name='characters' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Description</label>
+            <textarea name='description' required/>
+          </div>
+          <div>
+            <button>Add Scene</button>
+          </div>
+        </form>
+      </div>
+      <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+        {actThreeArr.map(scene => {
           return <li>{scene.fields.name}{scene.fields.location}</li>
         })}
       </ul>
+        </div>
+      </div>
     </div>
   )
 }

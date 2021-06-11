@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  input,
+  textarea {
+    @apply w-full rounded border-2;
+  }
+  form {
+    @apply mb-0 space-y-6;
+  }
+  textarea {
+    @apply h-24;
+  }
+  header {
+    @apply border-2 h-full;
+  }
+  a {
+    @apply border-2 rounded p-3 m-10;
+  }
+
+  nav {
+    @apply mt-8 mb-4;
+  }
+  h1 {
+    @apply text-6xl;
+  }
+  button {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+  }
+  /* .scene-form-container {
+    @apply bg-white py-8 px-6 shadow rounded-lg sm:px-10;
+  } */
+  /* .new-scene-containers {
+    @apply m-8 sm:w-auto sm:max-w-md min-w-1/3;
+  } */
+}

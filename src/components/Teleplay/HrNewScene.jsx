@@ -159,137 +159,202 @@ export default function HrNewScene() {
     <div>
     <header>
       <h1>Teleplay One Hour</h1>
-      <nav>
+        <nav>
+          <Link to='/'>Try Another Project</Link>
         <Link to='/teleplay/hr'>Story Board</Link>
         <Link to='/teleplay/hr/character'>Character List</Link>
       </nav>
     </header>
-    <h2>Cold Open</h2>
-    <form onChange={handleChangeCold} onSubmit={handleSubmitCold}>
-      <label>Scene Name:</label>
-      <input name='name'/>
-      <br />
-      <label>Location:</label>
-      <input name='location'/>
-      <br/>
-      <label>Character(s):</label>
-      <input name='characters'/>
-      <br/>
-      <label>Description:</label>
-      <input name='description'/>
-      <br/>
-      <button>Add Scene</button>
-    </form>
-    <ul>
+    <div className='grid grid-row-3 grid-flow-col'>
+        <div className='m-8 sm:w-auto sm:max-w-md min-w-1/3'>
+      <h2>Cold Open</h2>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+        <form onChange={handleChangeCold} onSubmit={handleSubmitCold} className='mb-0 space-y-6'>
+          <div className='mt-1'>
+            <label className="">Scene Name</label>
+            <input name='name' required/>
+          </div>
+          <div className='mt-1'>
+            <label>Location</label>
+            <input name='location' required/>
+          </div>
+          <div className='mt-1'>
+            <label>Characters</label>
+            <input name='characters' required/>
+          </div>
+          <div className='mt-1'>
+            <label>Description</label>
+            <textarea name='description' required/>
+          </div>
+          <div>
+            <button>Add Scene</button>
+          </div>
+        </form>
+      </div>
+      <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {coldArr.map(scene => {
-          return <li>{scene.fields.name}{scene.fields.location}</li>
+          return <li className='mt-1 mb-1'>{scene.fields.name}: {scene.fields.location}</li>
         })}
-    </ul>    
-    <h2>Act One</h2>
-    <form onChange={handleChangeOne} onSubmit={handleSubmitOne}>
-      <label>Scene Name:</label>
-      <input name='name'/>
-      <br />
-      <label>Location:</label>
-      <input name='location'/>
-      <br/>
-      <label>Character(s):</label>
-      <input name='characters'/>
-      <br/>
-      <label>Description:</label>
-      <input name='description'/>
-      <br/>
-      <button>Add Scene</button>
-    </form>
-    <ul>
+      </ul>
+    </div>
+    <div className='m-8 sm:w-auto sm:max-w-md min-w-1/3'>
+      <h2>Act Two</h2>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+        <form onChange={handleChangeOne} onSubmit={handleSubmitOne} className='mb-0 space-y-6'>
+          <div className='mt-1'>
+            <label className=''>Scene Name</label>
+            <input name='name' required/>
+          </div>
+          <div className='mt-1'>
+                <label>Location</label>
+            <input name='location' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Characters</label>
+            <input name='characters' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Description</label>
+            <textarea name='description' required/>
+          </div>
+          <div>
+            <button>Add Scene</button>
+          </div>
+        </form>
+      </div>
+      <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {actOneArr.map(scene => {
-          return <li>{scene.fields.name}{scene.fields.location}</li>
+          return <li>{scene.fields.name} {scene.fields.location}</li>
         })}
-    </ul>  
-    <h2>Act Two</h2>
-      <form onChange={handleChangeTwo} onSubmit={handleSubmitTwo}>
-      <label>Scene Name:</label>
-      <input name='name'/>
-      <br />
-      <label>Location :</label>
-      <input name='location'/>
-      <br/>
-      <label>Character(s):</label>
-      <input name='characters'/>
-      <br/>
-      <label>Description:</label>
-      <input name='description'/>
-      <br/>
-      <button>Add Scene</button>
-    </form>
-    <ul>
+      </ul>
+      </div>
+      <div className='m-8  sm:w-auto sm:max-w-md'>
+      <h2>Act Three</h2>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+        <form onChange={handleChangeTwo} onSubmit={handleSubmitTwo} className='mb-0 space-y-6'>
+          <div className='mt-1'>
+            <label>Scene Name</label>
+            <input name='name' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Location</label>
+            <input name='location' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Characters</label>
+            <input name='characters' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Description</label>
+            <textarea name='description' required/>
+          </div>
+          <div>
+            <button>Add Scene</button>
+          </div>
+        </form>
+      </div>
+      <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {actTwoArr.map(scene => {
           return <li>{scene.fields.name}{scene.fields.location}</li>
         })}
-    </ul>  
-    <h2>Act Three</h2>
-    <form onChange={handleChangeThree} onSubmit={handleSubmitThree}>
-      <label>Scene Name:</label>
-      <input name='name'/>
-      <br />
-      <label>Location :</label>
-      <input name='location'/>
-      <br/>
-      <label>Character(s):</label>
-      <input name='characters'/>
-      <br/>
-      <label>Description:</label>
-      <input name='description'/>
-      <br/>
-      <button>Add Scene</button>
-    </form>
-    <ul>
+      </ul>
+        </div>
+      </div>
+      <div className='grid grid-row-3 grid-flow-col'>
+        <div className='m-8 sm:w-auto sm:max-w-md min-w-1/3'>
+      <h2>Act Three</h2>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+        <form onChange={handleChangeThree} onSubmit={handleSubmitThree} className='mb-0 space-y-6'>
+          <div className='mt-1'>
+            <label className="">Scene Name</label>
+            <input name='name' required/>
+          </div>
+          <div className='mt-1'>
+            <label>Location</label>
+            <input name='location' required/>
+          </div>
+          <div className='mt-1'>
+            <label>Characters</label>
+            <input name='characters' required/>
+          </div>
+          <div className='mt-1'>
+            <label>Description</label>
+            <textarea name='description' required/>
+          </div>
+          <div>
+            <button>Add Scene</button>
+          </div>
+        </form>
+      </div>
+      <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {actThreeArr.map(scene => {
-          return <li>{scene.fields.name}{scene.fields.location}</li>
+          return <li className='mt-1 mb-1'>{scene.fields.name}: {scene.fields.location}</li>
         })}
-    </ul>    
-    <h2>Act Four</h2>
-    <form onChange={handleChangeFour} onSubmit={handleSubmitFour}>
-      <label>Scene Name:</label>
-      <input name='name'/>
-      <br />
-      <label>Location :</label>
-      <input name='location'/>
-      <br/>
-      <label>Character(s):</label>
-      <input name='characters'/>
-      <br/>
-      <label>Description:</label>
-      <input name='description'/>
-      <br/>
-      <button>Add Scene</button>
-    </form>
-    <ul>
+      </ul>
+    </div>
+    <div className='m-8 sm:w-auto sm:max-w-md min-w-1/3'>
+      <h2>Act Four</h2>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+        <form onChange={handleChangeFour} onSubmit={handleSubmitFour} className='mb-0 space-y-6'>
+          <div className='mt-1'>
+            <label className=''>Scene Name</label>
+            <input name='name' required/>
+          </div>
+          <div className='mt-1'>
+                <label>Location</label>
+            <input name='location' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Characters</label>
+            <input name='characters' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Description</label>
+            <textarea name='description' required/>
+          </div>
+          <div>
+            <button>Add Scene</button>
+          </div>
+        </form>
+      </div>
+      <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {actFourArr.map(scene => {
-          return <li>{scene.fields.name}{scene.fields.location}</li>
+          return <li>{scene.fields.name} {scene.fields.location}</li>
         })}
-    </ul>    
-    <h2>Act Five</h2>
-    <form onChange={handleChangeFive} onSubmit={handleSubmitFive}>
-      <label>Scene Name:</label>
-      <input name='name'/>
-      <br />
-      <label>Location :</label>
-      <input name='location'/>
-      <br/>
-      <label>Character(s):</label>
-      <input name='characters'/>
-      <br/>
-      <label>Description:</label>
-      <input name='description'/>
-      <br/>
-      <button>Add Scene</button>
-    </form>
-    <ul>
+      </ul>
+      </div>
+      <div className='m-8  sm:w-auto sm:max-w-md'>
+      <h2>Act Five</h2>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+        <form onChange={handleChangeFive} onSubmit={handleSubmitFive} className='mb-0 space-y-6'>
+          <div className='mt-1'>
+            <label>Scene Name</label>
+            <input name='name' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Location</label>
+            <input name='location' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Characters</label>
+            <input name='characters' required/>
+          </div>
+          <div className='mt-1'>
+          <label>Description</label>
+            <textarea name='description' required/>
+          </div>
+          <div>
+            <button>Add Scene</button>
+          </div>
+        </form>
+      </div>
+      <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         {actFiveArr.map(scene => {
           return <li>{scene.fields.name}{scene.fields.location}</li>
         })}
-    </ul>    
+      </ul>
+        </div>
+      </div>
   </div>
   )
 }

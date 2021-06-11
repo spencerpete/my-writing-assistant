@@ -20,78 +20,80 @@ export default function HrTeleplay() {
   const actFiveArr = scenes.filter(scene => scene.fields.act === 'act five')
   return (
     <>
-    <header>Teleplay Hour Long</header>
-    <nav>
-      <Link to='/'>Try a different project</Link>
-      <Link to='/teleplay/hr/character'>Character List</Link>
-      <Link to='/teleplay/hr/new-scene'>Add Scenes</Link>
-    </nav>
-    <h1>Cold Open</h1>
-    <div>
-      {coldArr.map(scene => {
-        return <div>
-          {scene.fields?.name}
-          {scene.fields?.location}
-          {scene.fields?.characters}
-          {scene.fields?.description}
-        </div>
+      <header>
+        <h1>Teleplay Hour Long</h1>
+        <nav>
+          <Link to='/'>Try a different project</Link>
+          <Link to='/teleplay/hr/character'>Character List</Link>
+          <Link to='/teleplay/hr/new-scene'>Add Scenes</Link>
+      </nav>
+      </header>
+      <h2>Cold Open</h2>
+      <div className='grid grid-row-4 grid-flow-col'>
+        {coldArr.map(scene => {
+          return <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md'>
+            <p>{scene.fields?.name}</p>
+            <p className='italic'>{scene.fields?.location}</p>
+            <p>{scene.fields?.description}</p>
+            <p className='text-xs'>{scene.fields?.characters}</p>
+          </div>
         })}
-    </div>
-    <h1>Act One</h1>
-    <div>
-      {actOneArr.map(scene => {
-        return <div>
-          {scene.fields?.name}
-          {scene.fields?.location}
-          {scene.fields?.characters}
-          {scene.fields?.description}
-        </div>
+      </div>
+    <h2>Act One</h2>
+      <div className='grid grid-row-4 grid-flow-col'>
+        {actOneArr.map(scene => {
+          return <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md'>
+            <p>{scene.fields?.name}</p>
+            <p className='italic'>{scene.fields?.location}</p>
+            <p>{scene.fields?.description}</p>
+            <p className='text-xs'>{scene.fields?.characters}</p>
+          </div>
         })}
-    </div>
-    <h1>Act Two</h1>
-    <div>
-      {actTwoArr.map(scene => {
-        return <div>
-          {scene.fields?.name}
-          {scene.fields?.location}
-          {scene.fields?.characters}
-          {scene.fields?.description}
-        </div>
+      </div>
+      <h2>Act Two</h2>
+      <div className='grid grid-row-4 grid-flow-col'>
+        {actTwoArr.map(scene => {
+          return <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md'>
+            <p>{scene.fields?.name}</p>
+            <p className='italic'>{scene.fields?.location}</p>
+            <p>{scene.fields?.description}</p>
+            <p className='text-xs'>{scene.fields?.characters}</p>
+          </div>
         })}
-    </div>
-    <h1>Act Three</h1>
-    <div>
-      {actThreeArr.map(scene => {
-        return <div>
-          {scene.fields?.name}
-          {scene.fields?.location}
-          {scene.fields?.characters}
-          {scene.fields?.description}
-        </div>
+      </div>
+      <h2>Act Three</h2>
+      <div className='grid grid-row-4 grid-flow-col'>
+        {actThreeArr.map(scene => {
+          return <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md'>
+            <p>{scene.fields?.name}</p>
+            <p className='italic'>{scene.fields?.location}</p>
+            <p>{scene.fields?.description}</p>
+            <p className='text-xs'>{scene.fields?.characters}</p>
+          </div>
         })}
-    </div>
-    <h1>Act Four</h1>
-    <div>
-      {actFourArr.map(scene => {
-        return <div>
-          {scene.fields?.name}
-          {scene.fields?.location}
-          {scene.fields?.characters}
-          {scene.fields?.description}
-        </div>
+      </div>
+      <h2>Act Four</h2>
+      <div className='grid grid-row-4 grid-flow-col'>
+        {actFourArr.map(scene => {
+          return <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md'>
+            <p>{scene.fields?.name}</p>
+            <p className='italic'>{scene.fields?.location}</p>
+            <p>{scene.fields?.description}</p>
+            <p className='text-xs'>{scene.fields?.characters}</p>
+          </div>
         })}
-    </div>
-    <h1>Act Five</h1>
-    <div>
-      {actFiveArr.map(scene => {
-        return <div>
-          {scene.fields?.name}
-          {scene.fields?.location}
-          {scene.fields?.characters}
-          {scene.fields?.description}
-        </div>
+      </div>
+      <h2>Act Five</h2>
+      <div className='grid grid-row-4 grid-flow-col'>
+        {actFiveArr.map(scene => {
+          return <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md'>
+            <p>{scene.fields?.name}</p>
+            <p className='italic'>{scene.fields?.location}</p>
+            <p>{scene.fields?.description}</p>
+            <p className='text-xs'>{scene.fields?.characters}</p>
+          </div>
         })}
-    </div>
+      </div>
   </>
   )
 }
