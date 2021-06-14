@@ -75,15 +75,14 @@ export default function NewScene() {
   }
   const fetchData = async () => {
     const res = await getScenes()
-    setScenes(res.records);
+    setScenes(res.records.filter(scene => scene.fields.scriptType === 'screenplay'));
   };
   useEffect(() => {
     fetchData()
   }, [])
-  const filtered = scenes.filter(scene => scene.fields.scriptType === 'screenplay')
-  const actOneArr = filtered.filter(scene => scene.fields.act === 'act one')
-  const actTwoArr = filtered.filter(scene => scene.fields.act === 'act two' )
-  const actThreeArr = filtered.filter(scene => scene.fields.act === 'act three')
+  const actOneArr = scenes.filter(scene => scene.fields.act === 'act one').sort((a, b) => a.fields.name - b.fields.name)
+  const actTwoArr = scenes.filter(scene => scene.fields.act === 'act two').sort((a, b) => a.fields.name - b.fields.name)
+  const actThreeArr = scenes.filter(scene => scene.fields.act === 'act three').sort((a, b) => a.fields.name - b.fields.name)
   return (
     <div>
       <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6 mt-0">
@@ -93,7 +92,7 @@ export default function NewScene() {
         <div>
           <div>
             <Link className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8" to='/'>Try Another Project</Link>
-            <Link className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8" to='/screenplay'>Story Board</Link>
+            <Link className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8" to='/screenplay'>Scene Board</Link>
             <Link className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-8" to='/screenplay/character'>Character List</Link>
           </div>
         </div>

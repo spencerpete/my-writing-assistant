@@ -50,12 +50,12 @@ export default function CharacterList() {
         </div>
         <div>
           <Link to='/'>Try Another Project</Link>
-          <Link to='/screenplay'>Story Board</Link>
+          <Link to='/screenplay'>Scene Board</Link>
           <Link to='/screenplay/new-scene'>Add Scenes</Link>
         </div>
         </nav>
       <div className='grid grid-row-2 grid-flow-col'>
-      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md overflow-auto'>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md overflow-auto h-96'>
           <h2>Character List</h2>
           {characters.map(character => {
             return <div key={character.id} >
@@ -68,7 +68,7 @@ export default function CharacterList() {
           </div>
         })}
       </div>
-      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md'> 
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md '> 
           <form onChange={handleChange} onSubmit={ edit? handleEdit : handleSubmit}>
           <h3>Character Details</h3>
           <label>Name: </label>
