@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import {getScenes} from '../../services/apiCall'
+import { getScenes } from '../../services/apiCall'
 export default function Screenplay() {
   const [scenes, setScenes] = useState([])
   useEffect(() => {
@@ -10,7 +10,7 @@ export default function Screenplay() {
     };
     fetchData()
   }, [])
-  console.log(scenes)
+  
   const actOneArr = scenes.filter(scene => scene.fields.act === 'act one').sort((a, b) => a.fields.name - b.fields.name)
   // const sorted= actOneArr.sort((a, b) => a.fields.name - b.fields.name)
   // console.log(actOneArr)
@@ -30,9 +30,9 @@ export default function Screenplay() {
         </div>
         </nav>
       <h2>Act One</h2>
-      <div className='grid grid-row-4 grid-flow-col'>
+      <div className='grid grid-cols-4 grid-flow-row'>
         {actOneArr.map(scene => {
-          return <div key={scene.id} className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md'>
+          return  <div key={scene.id} className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto max-w-xs'>
             {/* <p>{scene.fields?.name}</p> */}
             <p className='italic'>{scene.fields?.location}</p>
             <p>{scene.fields?.description}</p>
@@ -43,7 +43,7 @@ export default function Screenplay() {
       <h2>Act Two</h2>
       <div className='grid grid-row-4 grid-flow-col'>
         {actTwoArr.map(scene => {
-          return <div key={scene.id} className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md'>
+          return <div key={scene.id} className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto max-w-xs'>
             <p>{scene.fields?.name}</p>
             <p className='italic'>{scene.fields?.location}</p>
             <p>{scene.fields?.description}</p>

@@ -1,4 +1,4 @@
-import {Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 export default function Homepage() {
   return (
     <div>
@@ -22,6 +22,10 @@ export default function Homepage() {
           </div>
         </div>
       </nav>
+      <div>
+        <h1 className='text-xl'>Welcome to Melies</h1>
+        <p>Melies is your go to site for story outlining. Pick your script type and get started!</p>
+      </div>
     </div>
   )
 }

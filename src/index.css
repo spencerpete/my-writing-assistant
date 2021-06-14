@@ -32,4 +32,8 @@
   .dropdown:hover .dropdown-menu {
     display: block;
   }
+
+  .add-scene-container {
+    @apply bg-white py-8 px-6 shadow rounded-lg sm:px-10 max-h-32 overflow-auto;
+  }
 }

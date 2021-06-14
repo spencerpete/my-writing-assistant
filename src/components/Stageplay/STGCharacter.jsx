@@ -34,36 +34,39 @@ export default function STGCharacter() {
   return (
     <div>
       <nav>
-          <div className='flex items-center flex-shrink-0 mr-6'>
-            <span className="font-semibold text-xl tracking-tight">Stage Play</span>
-          </div>
-          <div>
+        <div className='flex items-center flex-shrink-0 mr-6'>
+        <span className="font-semibold text-xl tracking-tight">Stage Play</span>
+        </div>
+        <div>
           <Link to='/'>Try a different project</Link>
           <Link to='/stageplay'>Scene Board</Link>
           <Link to='/stageplay/new-scene'>Add Scenes</Link>
-          </div>
-        </nav>
+        </div>
+      </nav>
       <div className='grid grid-row-2 grid-flow-col'>
-      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md'>
-        <h2>Character List</h2>
-        {characters.map(character => {
-          return <div key={character.id}>
-            {character.fields?.name}
-            {character.fields?.age}
-            {character.fields?.backstory}
+        <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md overflow-auto'>
+          <h2>Character List</h2>
+          {characters.map(character => {
+            return <div key={character.id} >
+              <div className='bg-white  px-6 shadow rounded-lg sm:px-10 m-2 sm:w-auto sm:max-w-md grid grid-rows-1 grid-flow-col'>
+                <div>
+                  <p>{character.fields?.name} {character.fields?.age}</p>
+                  <p>{character.fields?.backstory}</p>
+                </div>
+            </div>    
           </div>
         })}
       </div>
-      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md '> 
-        <form onChange={handleChange} onSubmit={handleSubmit}>
+      <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10 m-8 sm:w-auto sm:max-w-md'> 
+          <form onChange={handleChange} onSubmit={handleSubmit}>
           <h3>Character Details</h3>
           <label>Name: </label>
-          <input name='name' required/> 
+          <input name='name' value={input.name} required/> 
         <label>Age: </label>
-        <input name='age' required/>
+        <input name='age' value={input.age} required/>
         <label>Backstory: </label>
-        <textarea name='backstory' required/>
-        <button>Add/Edit</button>
+            <textarea name='backstory' value={input.backstory}required/>
+            <button className='mr-8' >Add</button>
         </form>
         </div>
       </div>

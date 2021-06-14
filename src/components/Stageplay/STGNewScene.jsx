@@ -40,11 +40,13 @@ export default function STGNewScene() {
     e.preventDefault()
     await createScene(actOne)
     fetchData()
+    setActOne(actOneObj)
   }
   const handleSubmitTwo = async (e) => {
     e.preventDefault()
     await createScene(actTwo)
     fetchData()
+    setActTwo(actTwoObj)
   }
   const fetchData = async () => {
     const res = await getScenes()
@@ -53,7 +55,6 @@ export default function STGNewScene() {
   useEffect(() => {
     fetchData()
   }, [])
-  console.log(scenes)
   const actOneArr = scenes.filter(scene => scene.fields.act === 'act one')
   const actTwoArr = scenes.filter(scene => scene.fields.act === 'act two')
   return (
@@ -74,27 +75,27 @@ export default function STGNewScene() {
       <div className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
         <form onChange={handleChangeOne} onSubmit={handleSubmitOne} className='mb-0 space-y-6'>
           <div className='mt-1'>
-            <label className="">Scene Name</label>
-            <input name='name' required/>
+            <label className="">Scene Number</label>
+            <input name='name' value={actOne.name} required/>
           </div>
           <div className='mt-1'>
             <label>Location</label>
-            <input name='location' required/>
+            <input name='location' value={actOne.Location} required/>
           </div>
           <div className='mt-1'>
             <label>Characters</label>
-            <input name='characters' required/>
+                <input name='characters' value={actOne.characters} required/>
           </div>
           <div className='mt-1'>
             <label>Description</label>
-            <textarea name='description' required/>
+            <textarea name='description' value={actOne.description} required/>
           </div>
           <div>
             <button>Add Scene</button>
           </div>
         </form>
       </div>
-      <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+      <ul className='add-scene-container'>
         {actOneArr.map(scene => {
           return <li className='mt-1 mb-1'>{scene.fields.name}: {scene.fields.location}</li>
         })}
@@ -106,26 +107,26 @@ export default function STGNewScene() {
         <form onChange={handleChangeTwo} onSubmit={handleSubmitTwo} className='mb-0 space-y-6'>
           <div className='mt-1'>
             <label className=''>Scene Name</label>
-            <input name='name' required/>
+            <input name='name' value={actTwo.name} required/>
           </div>
           <div className='mt-1'>
                 <label>Location</label>
-            <input name='location' required/>
+            <input name='location' value={actTwo.location} required/>
           </div>
           <div className='mt-1'>
           <label>Characters</label>
-            <input name='characters' required/>
+            <input name='characters' value={actTwo.characters} required/>
           </div>
           <div className='mt-1'>
           <label>Description</label>
-            <textarea name='description' required/>
+            <textarea name='description' value={actTwo.description} required/>
           </div>
           <div>
             <button>Add Scene</button>
           </div>
         </form>
       </div>
-      <ul className='bg-white py-8 px-6 shadow rounded-lg sm:px-10'>
+      <ul className='add-scene-container'>
         {actTwoArr.map(scene => {
           return <li>{scene.fields.name} {scene.fields.location}</li>
         })}
