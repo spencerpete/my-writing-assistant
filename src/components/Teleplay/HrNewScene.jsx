@@ -165,7 +165,7 @@ export default function HrNewScene() {
     <div>
     <nav>
       <div className='flex items-center flex-shrink-0 mr-6'>
-        <span className="font-semibold text-xl tracking-tight">Teleplay 1 Hour</span>
+        <span className="font-semibold text-xl tracking-tight">teleplay 1 hour</span>
       </div>
       <div>
         <Link to='/'>Try Another Project</Link>  

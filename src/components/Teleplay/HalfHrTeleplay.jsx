@@ -18,7 +18,7 @@ export default function HalfHrTeleplay() {
     <>
       <nav>
       <div className='flex items-center flex-shrink-0 mr-6'>
-        <span className="font-semibold text-xl tracking-tight">Teleplay 30 Minute</span>
+        <span className="font-semibold text-xl tracking-tight">teleplay 30 minute</span>
       </div>
       <div>
         <Link to='/'>Try Another Project</Link>  

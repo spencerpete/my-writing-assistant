@@ -88,7 +88,7 @@ export default function NewScene() {
     <div>
       <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6 mt-0">
         <div className='flex items-center flex-shrink-0 mr-6'>
-          <span className="font-semibold text-xl tracking-tight">Screenplay</span>
+          <span className="font-semibold text-xl tracking-tight">screenplay</span>
           </div>
         <div>
           <div>

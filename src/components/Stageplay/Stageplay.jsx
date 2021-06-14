@@ -17,7 +17,7 @@ export default function Stageplay() {
     <>
         <nav>
           <div className='flex items-center flex-shrink-0 mr-6'>
-            <span className="font-semibold text-xl tracking-tight">Stage Play</span>
+            <span className="font-semibold text-xl tracking-tight">stage play</span>
           </div>
           <div>
           <Link to='/'>Try a different project</Link>
